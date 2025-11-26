@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tdsManha.rh.controller.ColaboradorController">
+    <center>
+        <TableView fx:id="colaboradorTableView" style="-fx-border-color: #e0e0e0; -fx-border-width: 1;">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="nomeColumn" prefWidth="200.0" text="Nome" />
+                <TableColumn fx:id="departamentoColumn" prefWidth="150.0" text="Departamento" />
+                <TableColumn fx:id="cargoColumn" prefWidth="150.0" text="Cargo" />
+                <TableColumn fx:id="dataAdmissaoColumn" prefWidth="120.0" text="Admissão" />
+                <TableColumn fx:id="salarioColumn" prefWidth="100.0" text="Salário" />
+                <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status" />
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox prefWidth="280.0" spacing="10.0" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 0 1;">
+            <padding>
+                <Insets bottom="10.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <Label text="Gerenciar Colaborador" style="-fx-text-fill: #165491;">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                </font>
+            </Label>
+            <Separator /> <Label text="Nome:" />
+            <TextField fx:id="nomeField" />
+            <Label text="Data de Admissão:" />
+            <DatePicker fx:id="dataAdmissaoPicker" prefWidth="250.0" />
+            <Label text="Salário Base:" />
+            <TextField fx:id="salarioField" />
+            <Label text="Departamento:" />
+            <ComboBox fx:id="departamentoComboBox" prefWidth="250.0" />
+            <Label text="Cargo:" />
+            <ComboBox fx:id="cargoComboBox" prefWidth="250.0" />
+            <Label text="Status:" />
+            <ComboBox fx:id="statusComboBox" prefWidth="250.0" />
+            <HBox alignment="CENTER" spacing="10.0">
+                <padding>
+                    <Insets top="10.0" />
+                </padding>
+                <Button onAction="#handleSaveButton" text="Salvar" style="-fx-background-color: #F79633; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15 8 15;" />
+                <Button onAction="#handleDeleteButton" text="Excluir" style="-fx-background-color: #D82F00; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15 8 15;" />
+                <Button onAction="#handleClearButton" text="Limpar" style="-fx-background-color: #e0e0e0; -fx-font-weight: bold; -fx-padding: 8 15 8 15;" />
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>

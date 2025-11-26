@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.paint.Color?>
+
+<VBox alignment="TOP_CENTER" spacing="15.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tdsManha.rh.controller.AdminController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="Administração do Sistema" style="-fx-text-fill: #165491; -fx-padding: 10 0 10 0;">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <HBox alignment="TOP_CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
+        
+        <VBox HBox.hgrow="ALWAYS" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;">
+            <effect>
+                <DropShadow radius="5.0" height="10.0" width="10.0">
+                    <color>
+                        <Color opacity="0.08" />
+                    </color>
+                </DropShadow>
+            </effect>
+            
+            <Label text="Gerenciar Departamentos" style="-fx-text-fill: #165491;">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                </font>
+            </Label>
+            <Separator />
+            
+            <ListView fx:id="departamentoListView" VBox.vgrow="ALWAYS" prefHeight="250.0" />
+            
+            <Label text="Nome do Departamento:" />
+            <TextField fx:id="departamentoField" promptText="Digite o nome do novo departamento" />
+
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                <Button fx:id="deptAdicionarButton" onAction="#handleAddDepartamento" text="Adicionar Novo" style="-fx-background-color: #F79633; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <Button fx:id="deptSalvarEdicaoButton" onAction="#handleUpdateDepartamento" text="Salvar Edição" style="-fx-background-color: #165491; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <Button fx:id="deptExcluirButton" onAction="#handleDeleteDepartamento" text="Excluir" style="-fx-background-color: #D82F00; -fx-text-fill: white; -fx-font-weight: bold;" />
+            </HBox>
+        </VBox>
+
+        <VBox HBox.hgrow="ALWAYS" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;">
+            <effect>
+                <DropShadow radius="5.0" height="10.0" width="10.0">
+                    <color>
+                        <Color opacity="0.08" />
+                    </color>
+                </DropShadow>
+            </effect>
+            
+            <Label text="Gerenciar Cargos" style="-fx-text-fill: #165491;">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                </font>
+            </Label>
+            <Separator />
+            
+            <ListView fx:id="cargoListView" VBox.vgrow="ALWAYS" prefHeight="250.0" />
+            
+            <Label text="Nome do Cargo:" />
+            <TextField fx:id="cargoField" promptText="Digite o nome do novo cargo" />
+
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                <Button fx:id="cargoAdicionarButton" onAction="#handleAddCargo" text="Adicionar Novo" style="-fx-background-color: #F79633; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <Button fx:id="cargoSalvarEdicaoButton" onAction="#handleUpdateCargo" text="Salvar Edição" style="-fx-background-color: #165491; -fx-text-fill: white; -fx-font-weight: bold;" />
+                <Button fx:id="cargoExcluirButton" onAction="#handleDeleteCargo" text="Excluir" style="-fx-background-color: #D82F00; -fx-text-fill: white; -fx-font-weight: bold;" />
+            </HBox>
+        </VBox>
+        
+    </HBox>
+</VBox>

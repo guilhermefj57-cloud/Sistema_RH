@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.paint.Color?>
+
+<VBox alignment="TOP_CENTER" spacing="15.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tdsManha.rh.controller.FeriasController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="Gestão de Férias" textAlignment="CENTER" style="-fx-text-fill: #165491; -fx-padding: 10 0 10 0;">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-padding: 15; -fx-background-color: white; -fx-background-radius: 10;">
+        <Label text="Selecione o Colaborador:" style="-fx-font-weight: bold;" />
+        <ComboBox fx:id="colaboradorComboBox" prefWidth="350.0" promptText="Nenhum colaborador selecionado" />
+        <effect>
+            <DropShadow radius="5.0" height="10.0" width="10.0">
+                <color>
+                    <Color opacity="0.08" />
+                </color>
+            </DropShadow>
+        </effect>
+    </HBox>
+
+    <HBox alignment="TOP_CENTER">
+        <GridPane hgap="20.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="350.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="350.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+
+            <VBox spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;">
+                <effect>
+                    <DropShadow radius="5.0" height="10.0" width="10.0">
+                        <color>
+                            <Color opacity="0.08" />
+                        </color>
+                    </DropShadow>
+                </effect>
+                <Label text="Solicitar Novas Férias" style="-fx-text-fill: #165491;">
+                    <font><Font name="System Bold" size="16.0" /></font>
+                </Label>
+                <Separator />
+                <Label text="Data de Início:" />
+                <DatePicker fx:id="dataInicioPicker" maxWidth="1.7976931348623157E308" />
+                <Label text="Data de Fim:" />
+                <DatePicker fx:id="dataFimPicker" maxWidth="1.7976931348623157E308" />
+                <Button fx:id="solicitarButton" onAction="#handleSolicitarButton" text="Solicitar Férias" style="-fx-background-color: #F79633; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 20 8 20;" />
+            </VBox>
+
+            <VBox spacing="10.0" GridPane.columnIndex="1" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;">
+                <effect>
+                    <DropShadow radius="5.0" height="10.0" width="10.0">
+                        <color>
+                            <Color opacity="0.08" />
+                        </color>
+                    </DropShadow>
+                </effect>
+                <Label text="Informações do Saldo" style="-fx-text-fill: #165491;">
+                    <font><Font name="System Bold" size="16.0" /></font>
+                </Label>
+                <Separator />
+                <HBox spacing="5.0">
+                    <Label text="Saldo Disponível:" style="-fx-font-weight: bold;" />
+                    <Label fx:id="saldoLabel" text="-" wrapText="true" style="-fx-text-fill: #00BD6B; -fx-font-weight: bold;" />
+                </HBox>
+                <Label fx:id="periodoAquisitivoLabel" text="Período Aquisitivo: -" wrapText="true" />
+            </VBox>
+        </GridPane>
+    </HBox>
+
+    <Label text="Histórico de Férias do Colaborador" style="-fx-text-fill: #165491; -fx-padding: 10 0 0 0;">
+        <font><Font name="System Bold" size="16.0" /></font>
+    </Label>
+    <TableView fx:id="feriasTableView" VBox.vgrow="ALWAYS" prefHeight="200.0" style="-fx-border-color: #e0e0e0;">
+        <columns>
+            <TableColumn fx:id="dataInicioColumn" prefWidth="150.0" text="Data de Início" />
+            <TableColumn fx:id="dataFimColumn" prefWidth="150.0" text="Data de Fim" />
+            <TableColumn fx:id="diasColumn" prefWidth="100.0" text="Dias Gozados" />
+            <TableColumn fx:id="statusColumn" prefWidth="120.0" text="Status" />
+        </columns>
+    </TableView>
+</VBox>

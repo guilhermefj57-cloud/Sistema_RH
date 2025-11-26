@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.tdsManha.rh.controller.MainController">
+
+    <center>
+        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+
+                <Tab text="Início">
+                    <content>
+                        <fx:include fx:id="dashboardView" source="DashboardView.fxml"/>
+                    </content>
+                </Tab>
+
+                <Tab text="Colaboradores">
+                    <content>
+                        <fx:include source="ColaboradorView.fxml"/>
+                    </content>
+                </Tab>
+
+                <Tab text="Gestão de Férias">
+                    <content>
+                        <fx:include source="FeriasView.fxml"/>
+                    </content>
+                </Tab>
+
+                <Tab text="Avaliação de Desempenho">
+                    <content>
+                        <fx:include source="AvaliacaoView.fxml"/>
+                    </content>
+                </Tab>
+
+                <Tab text="Administração">
+                    <content>
+                        <fx:include source="AdminView.fxml"/>
+                    </content>
+                </Tab>
+
+            </tabs>
+        </TabPane>
+    </center>
+
+</BorderPane>

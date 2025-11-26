@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.paint.Color?>
+
+<VBox alignment="TOP_CENTER" spacing="15.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tdsManha.rh.controller.AvaliacaoController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="Avaliação de Desempenho" style="-fx-text-fill: #165491; -fx-padding: 10 0 10 0;">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-padding: 15; -fx-background-color: white; -fx-background-radius: 10;">
+        <Label text="Selecione o Colaborador:" style="-fx-font-weight: bold;" />
+        <ComboBox fx:id="colaboradorComboBox" prefWidth="350.0" promptText="Nenhum colaborador selecionado" />
+        <effect>
+            <DropShadow radius="5.0" height="10.0" width="10.0">
+                <color>
+                    <Color opacity="0.08" />
+                </color>
+            </DropShadow>
+        </effect>
+    </HBox>
+
+    <VBox spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 15;">
+        <effect>
+            <DropShadow radius="5.0" height="10.0" width="10.0">
+                <color>
+                    <Color opacity="0.08" />
+                </color>
+            </DropShadow>
+        </effect>
+        
+        <Label text="Registrar Nova Avaliação" style="-fx-text-fill: #165491;">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Separator />
+        
+        <GridPane hgap="15.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+                <ColumnConstraints hgrow="NEVER" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            
+            <Label text="Data da Avaliação:" />
+            <DatePicker fx:id="dataAvaliacaoPicker" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" />
+            
+            <Label text="Nota (1.0 a 5.0):" GridPane.rowIndex="1" />
+            <Spinner fx:id="notaSpinner" editable="true" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            
+            <Label text="Plano de Ação:" GridPane.columnIndex="2" />
+            <TextArea fx:id="planoAcaoTextArea" prefHeight="60.0" wrapText="true" GridPane.columnIndex="2" GridPane.rowSpan="2" />
+        </GridPane>
+        
+        <HBox alignment="CENTER_RIGHT" spacing="10.0" VBox.vgrow="NEVER">
+            <padding>
+                <Insets top="10.0" />
+            </padding>
+            <Button fx:id="editarButton" onAction="#handleEditarButton" text="Editar Avaliação" style="-fx-background-color: #165491; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15 8 15;" />
+            <Button fx:id="salvarButton" onAction="#handleSalvarButton" text="Salvar Avaliação" style="-fx-background-color: #F79633; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15 8 15;" />
+            <Button fx:id="excluirButton" onAction="#handleExcluirButton" text="Excluir Avaliação" style="-fx-background-color: #D82F00; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15 8 15;" />
+        </HBox>
+    </VBox>
+
+    <Label text="Histórico de Avaliações do Colaborador" style="-fx-text-fill: #165491; -fx-padding: 10 0 0 0;">
+        <font>
+            <Font name="System Bold" size="16.0" />
+        </font>
+    </Label>
+    <TableView fx:id="avaliacaoTableView" VBox.vgrow="ALWAYS" prefHeight="200.0" style="-fx-border-color: #e0e0e0;">
+        <columns>
+            <TableColumn fx:id="dataColumn" prefWidth="150.0" text="Data da Avaliação" />
+            <TableColumn fx:id="notaColumn" prefWidth="100.0" text="Nota" />
+            <TableColumn fx:id="planoAcaoColumn" prefWidth="450.0" text="Plano de Ação" />
+        </columns>
+    </TableView>
+</VBox>
