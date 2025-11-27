@@ -1,2 +1,68 @@
-.vscode
-.git
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# IDEs and editors
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.classpath
+.project
+.settings/
+
+# Build / output
+/target/
+/build/
+/out/
+/*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+/.gradle/
+build/
+
+# NetBeans
+nbproject/private/
+build/
+dist/
+
+# Logs
+logs/
+*.log
+hs_err_pid*
+
+# Runtime dumps
+replay_pid*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*~
+
+# Environment / local config
+.env
+local.properties
+
+# OS generated files
+.DS_Store
+
+# VS Code workspace storage
+.vscode/*storage*
+
+# Generated sources
+/generated-sources/
+/generated/
+
+# Other
+Thumbs.db
